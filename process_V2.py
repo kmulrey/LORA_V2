@@ -14,14 +14,27 @@ import detector
 import event
 import imp
 
-outputdir='/Users/kmulrey/LOFAR/LORA/LORAprocessing/LORA_V2/LORAoutput/'
+#outputdir='/Users/kmulrey/LOFAR/LORA/LORAprocessing/LORA_V2/LORAoutput/'
 outputdir='/vol/astro3/lofar/lora/testOutput/'
 
 path='/vol/astro3/lofar/vhecr/lora_triggered/LORAraw/'
 path2='new_files/'
 
 
-file_name='20200105_2207'
+
+
+parser = OptionParser()
+parser.add_option('-f', '--file',type='str',help='filename',default=0)
+
+(options, args) = parser.parse_args()
+file_name=str(options.file)
+
+
+
+
+
+
+#file_name='20200105_2207'
 file=path2+file_name+'.npz'
 
 d=np.load(file,allow_pickle=True)

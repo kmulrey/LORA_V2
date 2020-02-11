@@ -65,12 +65,15 @@ for e in np.arange(len(big_events)):
 
         time_event=header_data.item()['GPS_Time_Stamp_FirstHit'][event_id_all==event_id]
         ns_event=header_data.item()['nsec_Online_FirstHit'][event_id_all==event_id]
+        size_event=header_data.item()['vent_Size'][event_id_all==event_id]
 
         detectors=[]
         lasas=[]
         LOFAR_id=str(int(time_event-LORA.event_id_offset))
 
         print 'running LOFAR event: {0}'.format(LOFAR_id)
+        print 'size of event: {0}'.format(size_event)
+        print 'ns event: {0}'.format(ns_event)
 
         ev=event.Event(LOFAR_id,'V2')
 

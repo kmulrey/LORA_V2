@@ -101,6 +101,7 @@ for e in np.arange(len(big_events)):
         diff0=int(sec_info0[i]['GPS_time_stamp_M'])-int(time_event)
         diff1=int(sec_info1[i]['GPS_time_stamp_M'])-int(time_event)
         diff2=int(sec_info2[i]['GPS_time_stamp_M'])-int(time_event)
+        print diff0,diff1,diff2
         if diff0!=0 or diff1!=1 or diff2!=2:
             print 'difference not correct'
             lasas[i].sec_flag=1
@@ -108,7 +109,7 @@ for e in np.arange(len(big_events)):
             print 'data type problem'
             lasas[i].sec_flag=1
 
-
+    print 'loading event'
     detector.load_event_information(info,detectors)
     detector.load_sec_information(sec_info0,sec_info1,sec_info2,lasas,'V2')
     detector.load_log_information(log_info,detectors)

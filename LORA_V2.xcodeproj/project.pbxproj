@@ -6,10 +6,23 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXFileReference section */
+		418687F223E3087F00D6E820 /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
+		418687F323E308E900D6E820 /* read_root_files.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = read_root_files.py; sourceTree = "<group>"; };
+		418687F423E773F700D6E820 /* plot_coords.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = plot_coords.py; sourceTree = "<group>"; };
+		418687F523E7760100D6E820 /* V1_coords.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = V1_coords.txt; sourceTree = "<group>"; };
+		41F742AF23F21D22004CE5D7 /* process_V2.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = process_V2.py; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		418687EB23E3086B00D6E820 = {
 			isa = PBXGroup;
 			children = (
+				41F742AF23F21D22004CE5D7 /* process_V2.py */,
+				418687F223E3087F00D6E820 /* main.py */,
+				418687F423E773F700D6E820 /* plot_coords.py */,
+				418687F523E7760100D6E820 /* V1_coords.txt */,
+				418687F323E308E900D6E820 /* read_root_files.py */,
 			);
 			sourceTree = "<group>";
 		};

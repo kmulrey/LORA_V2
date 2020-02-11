@@ -27,7 +27,7 @@ parser = OptionParser()
 parser.add_option('-f', '--file',type='str',help='filename',default=0)
 
 (options, args) = parser.parse_args()
-file_name=int(options.file)
+file_name=str(options.file)
 
 
 

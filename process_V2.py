@@ -67,7 +67,7 @@ for e in np.arange(len(big_events)):
     ns_event=header_data.item()['nsec_Online_FirstHit'][event_id_all==event_id]
     size_event=header_data.item()['Event_Size'][event_id_all==event_id]
     
-    print 'running LOFAR event: {0}'.format(LOFAR_id)
+    print 'running event id: {0}'.format(event_id)
     print 'size of event: {0}'.format(size_event)
     print 'ns event: {0}'.format(ns_event)
     

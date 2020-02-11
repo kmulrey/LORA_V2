@@ -15,7 +15,7 @@ from optparse import OptionParser
 
 path='/Users/kmulrey/LOFAR/LORA/LORAraw/'
 path='/vol/astro3/lofar/lora/LORA_software_V2/LORA_V2/'
-
+path='/vol/astro3/lofar/vhecr/lora_triggered/LORAraw/'
 path2='new_files/'
 
 

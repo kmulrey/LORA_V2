@@ -57,8 +57,9 @@ print big_events
 
 
 for e in np.arange(len(big_events)):
-#for e in np.arange(0):
-    try:
+    for t in np.arange(1):
+    #try:
+    
         event_id=big_events[e]
         print '\n\n\n________________________________________\n'
 
@@ -171,5 +172,5 @@ for e in np.arange(len(big_events)):
             output_file.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6:.4f}\n'.format(i+1,detectors[i].x_cord,detectors[i].y_cord,detectors[i].z_cord,int(detectors[i].gps),int(detectors[i].cal_time),detectors[i].density))
 
         output_file.close()
-    except:
-        print 'Failed for ID {0}'.format(event_id)
+    #except:
+        #print 'Failed for ID {0}'.format(event_id)

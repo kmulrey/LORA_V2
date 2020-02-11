@@ -2,8 +2,10 @@
 import numpy as np
 import ROOT, glob, os, sys
 import read_root_files as read
-import matplotlib.pyplot as plt
-plt.ion()
+#import matplotlib.pyplot as plt
+from optparse import OptionParser
+
+#plt.ion()
 
 #path='/Users/kmulrey/LOFAR/LORA/DAQ_test/DAQ_test/lora_daq-master/normal_daq_output/'
 

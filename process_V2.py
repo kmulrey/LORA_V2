@@ -31,9 +31,6 @@ file_name=str(options.file)
 
 
 
-
-
-
 #file_name='20200105_2207'
 file=path2+file_name+'.npz'
 

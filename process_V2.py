@@ -65,7 +65,7 @@ for e in np.arange(len(big_events)):
 
         time_event=header_data.item()['GPS_Time_Stamp_FirstHit'][event_id_all==event_id]
         ns_event=header_data.item()['nsec_Online_FirstHit'][event_id_all==event_id]
-        size_event=header_data.item()['vent_Size'][event_id_all==event_id]
+        size_event=header_data.item()['Event_Size'][event_id_all==event_id]
 
         detectors=[]
         lasas=[]

@@ -69,8 +69,8 @@ for e in np.arange(len(big_events)):
     
     print 'running event id: {0}'.format(event_id)
     print 'size of event: {0}'.format(size_event)
-    print 'time event: {0}'.format(time_event)
-    print 'ns event: {0}'.format(ns_event)
+    print 'time event: {0}'.format(int(time_event))
+    print 'ns event: {0}'.format(int(ns_event))
     print header_data.item()['nsec_Online_FirstHit'][int(event_id)]
 
     

@@ -104,6 +104,10 @@ for e in np.arange(len(big_events)):
         print diff0,diff1,diff2
         if diff0!=0 or diff1!=1 or diff2!=2:
             print 'difference not correct'
+            diff0=0
+            diff1=1
+            diff2=2
+
             lasas[i].sec_flag=1
         if sec_info0[i]['CTP_M']>1e10 or sec_info0[i]['CTP_S']>1e10:
             print 'data type problem'

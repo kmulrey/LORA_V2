@@ -57,16 +57,17 @@ print big_events
 
 
 for e in np.arange(len(big_events)):
-    for t in np.arange(1):
+    #for t in np.arange(1):
     #try:
     
-        event_id=big_events[e]
-        print '\n\n\n________________________________________\n'
+    event_id=big_events[e]
+    print '\n\n\n________________________________________\n'
 
-        time_event=header_data.item()['GPS_Time_Stamp_FirstHit'][event_id_all==event_id]
-        ns_event=header_data.item()['nsec_Online_FirstHit'][event_id_all==event_id]
-        size_event=header_data.item()['Event_Size'][event_id_all==event_id]
-
+    time_event=header_data.item()['GPS_Time_Stamp_FirstHit'][event_id_all==event_id]
+    ns_event=header_data.item()['nsec_Online_FirstHit'][event_id_all==event_id]
+    size_event=header_data.item()['Event_Size'][event_id_all==event_id]
+    if ns_event>0:
+        
         detectors=[]
         lasas=[]
         LOFAR_id=str(int(time_event-LORA.event_id_offset))

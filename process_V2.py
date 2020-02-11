@@ -94,6 +94,10 @@ for e in np.arange(len(big_events)):
 
 
     for i in np.arange(LORA.nLASA):
+        print sec_info0[i]['GPS_time_stamp_M']
+        print sec_info1[i]['GPS_time_stamp_M']
+        print sec_info2[i]['GPS_time_stamp_M']
+
         diff0=int(sec_info0[i]['GPS_time_stamp_M'])-int(time_event)
         diff1=int(sec_info1[i]['GPS_time_stamp_M'])-int(time_event)
         diff2=int(sec_info2[i]['GPS_time_stamp_M'])-int(time_event)

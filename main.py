@@ -6,10 +6,32 @@ import matplotlib.pyplot as plt
 plt.ion()
 
 #path='/Users/kmulrey/LOFAR/LORA/DAQ_test/DAQ_test/lora_daq-master/normal_daq_output/'
+
+
+
+
+
 path='/Users/kmulrey/LOFAR/LORA/LORAraw/'
+path='/vol/astro3/lofar/lora/LORA_software_V2/LORA_V2/'
+
 path2='new_files/'
 
-file_name='20200105_2207'
+
+
+
+
+
+parser = OptionParser()
+parser.add_option('-f', '--file',type='str',help='filename',default=0)
+
+(options, args) = parser.parse_args()
+file_name=int(options.file)
+
+
+
+
+
+#file_name='20200122_005'
 #file_name='20200101_1847'
 #20200130_1110.root
 #20200130_1110_array.log

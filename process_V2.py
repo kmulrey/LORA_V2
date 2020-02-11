@@ -6,7 +6,7 @@ import datetime
 from datetime import datetime, timedelta
 from datetime import date
 
-sys.path.insert(1, '../../newLORA_processing/LORA_software_V2/')
+sys.path.insert(1, '../LORA_software_V2/')
 import LORAparameters as LORA
 import process_functions
 import read_functions
@@ -15,8 +15,9 @@ import event
 import imp
 
 outputdir='/Users/kmulrey/LOFAR/LORA/LORAprocessing/LORA_V2/LORAoutput/'
+outputdir='/vol/astro3/lofar/lora/testOutput/'
 
-path='/Users/kmulrey/LOFAR/LORA/LORAraw/'
+path='/vol/astro3/lofar/vhecr/lora_triggered/LORAraw/'
 path2='new_files/'
 
 

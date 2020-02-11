@@ -60,7 +60,7 @@ for e in np.arange(len(big_events)):
     #for t in np.arange(1):
     #try:
     
-    event_id=big_events[e]
+    event_id=int(big_events[e])
     print '\n\n\n________________________________________\n'
 
     time_event=header_data.item()['GPS_Time_Stamp_FirstHit'][event_id_all==event_id]

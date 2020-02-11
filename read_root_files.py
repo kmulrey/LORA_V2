@@ -36,6 +36,14 @@ def process_and_save(tfile):
     data_new_event={}
     data_new_osm={}
     data_new_header={}
+    
+    for tree_name in ['Tree_Event_Header']:
+        tree=rtfile.Get(tree_name)
+        for branch in branches[tree_name]:
+            print (tree_name,branch)
+            br= tree.GetBranch(branch)
+            n=br.GetEntries()
+            data_new_header[branch]=np.array([get_entry(br,branch,i) for i in range(n)])
 
     for tree_name in ['Tree_Detector_Config']:
         tree=rtfile.Get(tree_name)
@@ -68,14 +76,6 @@ def process_and_save(tfile):
             br= tree.GetBranch(branch)
             n=br.GetEntries()
             data_new_osm[branch]=np.array([get_entry(br,branch,i) for i in range(n)])
-            
-    for tree_name in ['Tree_Event_Header']:
-        tree=rtfile.Get(tree_name)
-        for branch in branches[tree_name]:
-            print (tree_name,branch)
-            br= tree.GetBranch(branch)
-            n=br.GetEntries()
-            data_new_header[branch]=np.array([get_entry(br,branch,i) for i in range(n)])
 
 
     #print (len(data_new['Waveform_Raw']), len(data_new['Charge_Corrected']))
@@ -83,7 +83,6 @@ def process_and_save(tfile):
     all_data={'data_config':data_new_config,'data_log':data_new_log,'data_event':data_new_event,'data_osm':data_new_osm,'data_header':data_new_header}
     
     
-    #np.savez(pklfile,**all_data)
     np.savez(pklfile,data_config=data_new_config,data_log=data_new_log,data_header=data_new_header,data_osm=data_new_osm,data_event=data_new_event)
     #return
 

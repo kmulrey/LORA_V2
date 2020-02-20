@@ -37,7 +37,8 @@ file_name=str(options.file)
 
 #file_name='20200105_2207'
 
-try:
+#try:
+for n in np.arange(1):
     file=path2+file_name+'.npz'
     d = joblib.load(file)
     #d=np.load(file,allow_pickle=True)
@@ -66,9 +67,9 @@ try:
 
     nevents_use=len(big_events)
     
-except:
-    print 'file {0} doesn\'t exist'.format(file)
-    nevents_use=0
+#except:
+#    print 'file {0} doesn\'t exist'.format(file)
+#    nevents_use=0
     
     
     

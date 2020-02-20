@@ -83,7 +83,8 @@ def process_and_save(tfile):
     all_data={'data_config':data_new_config,'data_log':data_new_log,'data_event':data_new_event,'data_osm':data_new_osm,'data_header':data_new_header}
     
     
-    np.savez_compressed(pklfile,data_config=data_new_config,data_log=data_new_log,data_header=data_new_header,data_osm=data_new_osm,data_event=data_new_event)
+    #np.savez_compressed(pklfile,data_config=data_new_config,data_log=data_new_log,data_header=data_new_header,data_osm=data_new_osm,data_event=data_new_event)
+    joblib.dump(all_data, pklfile)
     #return
 
 if __name__ == '__main__':

@@ -14,6 +14,7 @@
 		41F742AF23F21D22004CE5D7 /* process_V2.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = process_V2.py; sourceTree = "<group>"; };
 		41F742B023F29F05004CE5D7 /* event_list.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = event_list.txt; sourceTree = "<group>"; };
 		41F742B123F2A7AF004CE5D7 /* run_lora.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = run_lora.py; sourceTree = "<group>"; };
+		41F742B923FEC615004CE5D7 /* run_read_event.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_read_event.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -21,6 +22,7 @@
 			isa = PBXGroup;
 			children = (
 				41F742AF23F21D22004CE5D7 /* process_V2.py */,
+				41F742B923FEC615004CE5D7 /* run_read_event.sh */,
 				41F742B023F29F05004CE5D7 /* event_list.txt */,
 				41F742B123F2A7AF004CE5D7 /* run_lora.py */,
 				418687F223E3087F00D6E820 /* main.py */,

@@ -6,6 +6,7 @@ import datetime
 from datetime import datetime, timedelta
 from datetime import date
 from optparse import OptionParser
+from sklearn.externals import joblib
 
 sys.path.insert(1, '../LORA_software_V2/')
 import LORAparameters as LORA
@@ -38,8 +39,8 @@ file_name=str(options.file)
 
 try:
     file=path2+file_name+'.npz'
-
-    d=np.load(file,allow_pickle=True)
+    d = joblib.load(file)
+    #d=np.load(file,allow_pickle=True)
     print d.files
     log_data= d['data_log']
     config_data= d['data_config']
@@ -49,9 +50,13 @@ try:
 
 #print event_id_all[LOFAR_trigg==1]
 
-    event_size=header_data.item()['Event_Size']
-    event_id_all=header_data.item()['Event_Id']
-    LOFAR_trigg=header_data.item()['LOFAR_Trigg']
+    #event_size=header_data.item()['Event_Size']
+    #event_id_all=header_data.item()['Event_Id']
+    #LOFAR_trigg=header_data.item()['LOFAR_Trigg']
+    
+    event_size=header_data['Event_Size']
+    event_id_all=header_data['Event_Id']
+    LOFAR_trigg=header_data['LOFAR_Trigg']
 
 
     #big_events=event_id_all[LOFAR_trigg==1]
@@ -75,15 +80,15 @@ for e in np.arange(nevents_use):
     event_id=int(big_events[e])
     print '\n\n\n________________________________________\n'
 
-    time_event=header_data.item()['GPS_Time_Stamp_FirstHit'][event_id_all==event_id]
-    ns_event=header_data.item()['nsec_Online_FirstHit'][event_id_all==event_id]
-    size_event=header_data.item()['Event_Size'][event_id_all==event_id]
+    time_event=header_data['GPS_Time_Stamp_FirstHit'][event_id_all==event_id]
+    ns_event=header_data['nsec_Online_FirstHit'][event_id_all==event_id]
+    size_event=header_data['Event_Size'][event_id_all==event_id]
     
     print 'running event id: {0}'.format(event_id)
     print 'size of event: {0}'.format(size_event)
     print 'time event: {0}'.format(int(time_event))
     print 'ns event: {0}'.format(int(ns_event))
-    print header_data.item()['nsec_Online_FirstHit'][event_id_all==event_id]
+    print header_data['nsec_Online_FirstHit'][event_id_all==event_id]
 
     
     
@@ -139,11 +144,11 @@ for e in np.arange(nevents_use):
         detector.load_log_information(log_info,detectors)
 
 
-        lasa1_status=config_data.item()['lasa1_is_active']
-        lasa2_status=config_data.item()['lasa2_is_active']
-        lasa3_status=config_data.item()['lasa3_is_active']
-        lasa4_status=config_data.item()['lasa4_is_active']
-        lasa5_status=config_data.item()['lasa5_is_active']
+        lasa1_status=config_data['lasa1_is_active']
+        lasa2_status=config_data['lasa2_is_active']
+        lasa3_status=config_data['lasa3_is_active']
+        lasa4_status=config_data['lasa4_is_active']
+        lasa5_status=config_data['lasa5_is_active']
 
 
         for d in np.arange(LORA.nDetA):

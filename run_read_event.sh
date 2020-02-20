@@ -4,4 +4,4 @@
 
 use root
 
-python process_V2.py -f 20200109_2217
+python main.py -f 20200109_2217

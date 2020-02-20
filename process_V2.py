@@ -42,7 +42,7 @@ for n in np.arange(1):
     file=path2+file_name+'.npz'
     d = joblib.load(file)
     #d=np.load(file,allow_pickle=True)
-    print d.files
+    #print d.files
     log_data= d['data_log']
     config_data= d['data_config']
     header_data= d['data_header']

@@ -52,7 +52,8 @@ event_id_all=header_data.item()['Event_Id']
 LOFAR_trigg=header_data.item()['LOFAR_Trigg']
 
 
-big_events=event_id_all[LOFAR_trigg==1]
+#big_events=event_id_all[LOFAR_trigg==1]
+big_events=event_id_all[event_size>10]
 print big_events
 
 

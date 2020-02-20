@@ -35,29 +35,40 @@ file_name=str(options.file)
 
 
 #file_name='20200105_2207'
-file=path2+file_name+'.npz'
 
-d=np.load(file,allow_pickle=True)
-print d.files
-log_data= d['data_log']
-config_data= d['data_config']
-header_data= d['data_header']
-osm_data= d['data_osm']
-event_data= d['data_event']
+try:
+    file=path2+file_name+'.npz'
+
+    d=np.load(file,allow_pickle=True)
+    print d.files
+    log_data= d['data_log']
+    config_data= d['data_config']
+    header_data= d['data_header']
+    osm_data= d['data_osm']
+    event_data= d['data_event']
 
 #print event_id_all[LOFAR_trigg==1]
 
-event_size=header_data.item()['Event_Size']
-event_id_all=header_data.item()['Event_Id']
-LOFAR_trigg=header_data.item()['LOFAR_Trigg']
+    event_size=header_data.item()['Event_Size']
+    event_id_all=header_data.item()['Event_Id']
+    LOFAR_trigg=header_data.item()['LOFAR_Trigg']
 
 
-#big_events=event_id_all[LOFAR_trigg==1]
-big_events=event_id_all[event_size>10]
-print big_events
+    #big_events=event_id_all[LOFAR_trigg==1]
+    big_events=event_id_all[event_size>10]
+    print big_events
 
 
-for e in np.arange(len(big_events)):
+    nevents_use=len(big_events)
+    
+except:
+    print 'file {0} doesn\'t exist'.format(file)
+    nevents_use=0
+    
+    
+    
+    
+for e in np.arange(nevents_use):
     #for t in np.arange(1):
     #try:
     

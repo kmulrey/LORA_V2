@@ -13,6 +13,8 @@ branches['Tree_Log']=['Station','Detector','Channel_Thres_Low','Mean_Baseline','
 
 
 branches['Tree_OSM_HiSparc']=['Station','Master_Or_Slave','GPS_Time_Stamp','Sync_Error','Quant_Error','CTP']
+branches['Tree_OSM_AERA']=['Station','GPS_Time_Stamp','Sync_Error','Quant_Error','CTP','UTC_offset','trigger_rate']
+
 branches['Tree_Event_Header']=['GPS_Time_Stamp_FirstHit','nsec_Online_FirstHit','Event_Id','Run_Id','LOFAR_Trigg','Event_Tree_Index','Event_Size']
 
 def get_entry(br,key,n):
@@ -77,12 +79,20 @@ def process_and_save(tfile):
             print (tree_name,branch)
             br= tree.GetBranch(branch)
             n=br.GetEntries()
-            data_new_osm[branch]=np.array([get_entry(br,branch,i) for i in range(n)])
+            data_new_osm_hisparc[branch]=np.array([get_entry(br,branch,i) for i in range(n)])
+            
+    for tree_name in ['Tree_OSM_AERA']:
+        tree=rtfile.Get(tree_name)
+        for branch in branches[tree_name]:
+            print (tree_name,branch)
+            br= tree.GetBranch(branch)
+            n=br.GetEntries()
+            data_new_osm_aera[branch]=np.array([get_entry(br,branch,i) for i in range(n)])
 
 
     #print (len(data_new['Waveform_Raw']), len(data_new['Charge_Corrected']))
     
-    all_data={'data_config':data_new_config,'data_log':data_new_log,'data_event':data_new_event,'data_osm':data_new_osm,'data_header':data_new_header}
+    all_data={'data_config':data_new_config,'data_log':data_new_log,'data_event':data_new_event,'data_osm_hisparc':data_new_osm_hisparc,'data_osm_aera':data_new_osm_aera,'data_header':data_new_header}
     
     
     #np.savez_compressed(pklfile,data_config=data_new_config,data_log=data_new_log,data_header=data_new_header,data_osm=data_new_osm,data_event=data_new_event)

@@ -38,7 +38,9 @@ def process_and_save(tfile):
     data_new_config={}
     data_new_log={}
     data_new_event={}
-    data_new_osm={}
+    data_new_osm_hisparc={}
+    data_new_osm_aera={}
+
     data_new_header={}
     
     for tree_name in ['Tree_Event_Header']:

@@ -49,7 +49,7 @@ for n in np.arange(1):
     osm_data= d['data_osm']
     event_data= d['data_event']
 
-#print event_id_all[LOFAR_trigg==1]
+    #print event_id_all[LOFAR_trigg==1]
 
     #event_size=header_data.item()['Event_Size']
     #event_id_all=header_data.item()['Event_Id']

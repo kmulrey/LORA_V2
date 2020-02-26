@@ -191,7 +191,7 @@ for e in np.arange(nevents_use):
 
 
 
-        output_file.write('//UTC_Time(secs)\tnsecs\t\tCore(X)\t\tCore(Y)\t\tElevation\tAzimuth\t\tEnergy(eV)\tCoreE(X)\tCoreE(Y)\tMoliere_rad(m)\t\tElevaErr\tAziErr\tEnergyErr(eV)\tNe\t\tNeErr\t\tCorCoef_XY\t\tNe_RefA\t\tNeErr_RefA\t\tEnergy_RefA\t\tEnergyErr_RefAtrig\n')
+        output_file.write('//UTC_Time(secs)\tnsecs\t\tCore(X)\t\tCore(Y)\t\tElevation\tAzimuth\t\tEnergy(eV)\tCoreE(X)\tCoreE(Y)\tMoliere_rad(m)\t\tElevaErr\tAziErr\tEnergyErr(eV)\tNe\t\tNeErr\t\tCorCoef_XY\t\tNe_RefA\t\tNeErr_RefA\t\tEnergy_RefA\t\tEnergyErr_RefA\n')
         output_file.write('{0}\t{1}\t{2:.2f}\t{3:.2f}\t{4:.2f}\t{5:.2f}\t{6}\t{7:.2f}\t{8:.2f}\t{9:.2f}\t{10:.2f}\t{11:.2f}\t{12}\t{13}\t{14}\t{15}\t{16}\t{17}\t{18}\t{19}\n'.format(int(ev.UTC_min), int(ev.nsec_min/10), ev.x_core, ev.y_core, ev.fit_elevation, ev.fit_phi, ev.energy*np.power(10,15), ev.x_core_err, ev.y_core_err, ev.Rm, ev.fit_elevation_err, ev.fit_phi_err, ev.energy_err*np.power(10,15), ev.Ne, ev.Ne_err, ev.CorCoef_xy, ev.Ne_RefA, ev.NeErr_RefA, ev.Energy_RefA*np.power(10,15), ev.EnergyErr_RefA*np.power(10,15)))
 
         output_file.write('//Detector coordinates w.r.t CS002 LBA center\n')

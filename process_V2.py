@@ -46,7 +46,7 @@ for n in np.arange(1):
     log_data= d['data_log']
     config_data= d['data_config']
     header_data= d['data_header']
-    osm_data= d['data_osm']
+    osm_data= d['data_osm_hisparc']
     event_data= d['data_event']
 
     #print event_id_all[LOFAR_trigg==1]

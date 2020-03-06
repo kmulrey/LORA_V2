@@ -32,9 +32,7 @@ def find_tag(timestamp,ns_timestamp,data_dir):
     
     #print year,month,day,hour
     #print int(timestamp),int(ns_timestamp)
-    print 'day:    ',day
-    print 'month:    ',month
-    print 'year:    ',year
+   
 
     filestr1= str(year)+str(month).zfill(2)+str(day).zfill(2)
     filestr3='-1'
@@ -83,7 +81,7 @@ def find_tag(timestamp,ns_timestamp,data_dir):
         try:
             stamps=np.genfromtxt(file,skip_header=10,usecols=(2,3))
         except:
-            print 'empty log'
+            print('empty log')
         file.close()
 
         if len(stamps)>0:
@@ -105,7 +103,7 @@ def find_tag_exception(timestamp,ns_timestamp,data_dir):
     #timestamp = LORA4times[t][0]
     #ns_timestamp = LORA4times[t][1]
     
-    print 'no standard log file avaliable, trying to look at .root files'
+    print('no standard log file avaliable, trying to look at .root files')
     
     dt_object = datetime.fromtimestamp(timestamp)
     year=dt_object.year

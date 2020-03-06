@@ -700,7 +700,7 @@ def return_second_data_V2(event_id,event_GPS, event_ns,osm_data_hisparc):#,osm_d
                     info={'lasa':lasa,'YMD_M':np.asarray([0]),'GPS_time_stamp_M':np.asarray([0]),'sync_M':np.asarray([0]),'CTP_M':np.asarray([0]),'quant_M':np.asarray([0]),'YMD_S':np.asarray([0]),'GPS_time_stamp_S':np.asarray([0]),'sync_S':np.asarray([0]),'CTP_S':np.asarray([0]),'quant_S':np.asarray([0])}
             
             else:
-                (print 'no')
+                print('no')
                 '''
                 gps= GPS_Time_Stamp_A[(GPS_Time_Stamp_A==(event_GPS+t))*(Station_A==i+1)]
                 if len(gps>0):

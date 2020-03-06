@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		4118350624128C7C00CC065B /* LORAparameters.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = LORAparameters.py; sourceTree = "<group>"; };
+		4118350724128C8400CC065B /* event.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = event.py; sourceTree = "<group>"; };
+		4118350824128C8A00CC065B /* process_functions.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = process_functions.py; sourceTree = "<group>"; };
+		4118350924128C9000CC065B /* read_functions.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = read_functions.py; sourceTree = "<group>"; };
+		4118350A24128C9700CC065B /* detector.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = detector.py; sourceTree = "<group>"; };
+		4118350B24128CD100CC065B /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		418687F223E3087F00D6E820 /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
 		418687F323E308E900D6E820 /* read_root_files.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = read_root_files.py; sourceTree = "<group>"; };
 		418687F423E773F700D6E820 /* plot_coords.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = plot_coords.py; sourceTree = "<group>"; };
@@ -26,6 +32,12 @@
 				41F742B923FEC615004CE5D7 /* run_read_event.sh */,
 				41F742B023F29F05004CE5D7 /* event_list.txt */,
 				41F742B123F2A7AF004CE5D7 /* run_lora.py */,
+				4118350A24128C9700CC065B /* detector.py */,
+				4118350924128C9000CC065B /* read_functions.py */,
+				4118350824128C8A00CC065B /* process_functions.py */,
+				4118350724128C8400CC065B /* event.py */,
+				4118350624128C7C00CC065B /* LORAparameters.py */,
+				4118350B24128CD100CC065B /* data */,
 				418687F223E3087F00D6E820 /* main.py */,
 				418687F423E773F700D6E820 /* plot_coords.py */,
 				418687F523E7760100D6E820 /* V1_coords.txt */,

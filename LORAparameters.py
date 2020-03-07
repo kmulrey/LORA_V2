@@ -31,10 +31,10 @@ err_b=0.02    #Error on "par_b"
 ##signal_retrieve_file='/Users/kmulrey/LOFAR/LORA/LORAprocessing/newLORA_processing/LORA_software_V2/data/signal_retrive.dat'
 #atm_file='/Users/kmulrey/LOFAR/LORA/LORAprocessing/newLORA_processing/LORA_software_V2/data/atmos_attenuation.dat'
 
-det_cord_file='/vol/astro3/lofar/lora/LORA_software_V2/LORA_software_V2/data/Detector_Cord.dat'
+det_cord_file='/vol/astro3/lofar/lora/LORA_software_V2/LORA_V2/data/Detector_Cord.dat'
 gain_cal_file='/vol/astro3/lofar/lora/LORA_software_V2/LORA_software_V2/data/gain2.dat'
-signal_retrieve_file='/vol/astro3/lofar/lora/LORA_software_V2/LORA_software_V2/data/signal_retrive.dat'
-atm_file='/vol/astro3/lofar/lora/LORA_software_V2/LORA_software_V2/data/atmos_attenuation.dat'
+signal_retrieve_file='/vol/astro3/lofar/lora/LORA_software_V2/LORA_V2/data/signal_retrive.dat'
+atm_file='/vol/astro3/lofar/lora/LORA_software_V2/LORA_V2/data/atmos_attenuation.dat'
 
 event_id_offset=1262304000
 

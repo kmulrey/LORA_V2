@@ -189,8 +189,9 @@ def load_sec_information(info0,info1,info2,lasas,V):
 
 
 def load_positions(detectors):
-    file=open(LORA.det_cord_file,'r')
+    #file=open(LORA.det_cord_file,'r')
     cordinates=np.genfromtxt(file,skip_header=2,usecols=(1,2,3))
+    
     file.close()
     for i in np.arange(LORA.nDetB):
         detectors[i].x_cord=cordinates[i][0]

@@ -204,7 +204,7 @@ def load_signal(detectors):
     file=open(LORA.signal_retrieve_file,'r')
     info=np.genfromtxt(file,skip_header=8,usecols=(1,2,3,4,5,6))
     file.close()
-    for i in np.arange(LORA.nDetA):
+    for i in np.arange(LORA.nDetB):
         detectors[i].fArea12=info[i][0]
         detectors[i].err_fArea12=info[i][1]
         detectors[i].fArea23=info[i][2]

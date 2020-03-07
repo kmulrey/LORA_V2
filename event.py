@@ -765,7 +765,7 @@ def fit_NKG(detectors,event):
 
     Ne_fit,rM_fit,s_fit,Ne_fit_er=TF1_Fit_NKG(lat_den_show,Ne_fit,LORA.rM,LORA.Age,R_Min,R_Max)
 
-    print('Ne:  {0:.2f},   Rm:  {1:.2f}, xCore:  {2:.2f},  yCore:  {3:.2f}'.format(Ne_fit, rM_fit,x_core_fit, y_core_fit)
+    print('Ne:  {0:.2f},   Rm:  {1:.2f}, xCore:  {2:.2f},  yCore:  {3:.2f}'.format(Ne_fit, rM_fit,x_core_fit, y_core_fit))
 
 
 

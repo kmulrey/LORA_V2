@@ -889,3 +889,6 @@ def fit_NKG(detectors,event):
     event.Energy_RefA=energy_Ref
     event.EnergyErr_RefA=err_energy_Ref
 
+
+
+

@@ -61,7 +61,7 @@ def read_attenuation():
         return data
     except:
         print('problem reading atm file')
-        print('test')
+        print('test23')
         return 0
 
 def find_counts(detector):

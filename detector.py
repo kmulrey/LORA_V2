@@ -192,7 +192,7 @@ def load_positions(detectors):
     file=open(LORA.det_cord_file,'r')
     cordinates=np.genfromtxt(file,skip_header=2,usecols=(1,2,3))
     file.close()
-    for i in np.arange(LORA.nDetA):
+    for i in np.arange(LORA.nDetB):
         detectors[i].x_cord=cordinates[i][0]
         detectors[i].y_cord=cordinates[i][1]
         detectors[i].z_cord=cordinates[i][2]

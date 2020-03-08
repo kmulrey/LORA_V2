@@ -276,7 +276,7 @@ def get_event_timestamp_V2(detector,lasa):
         else:
             print('flagged event')
             detector.event_time_stamp=10*detector.nsec
-            print detector.event_time_stamp
+            #print detector.event_time_stamp
 
 
 

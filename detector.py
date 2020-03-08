@@ -167,7 +167,7 @@ def load_sec_information(info0,info1,info2,lasas,V):
           for i in np.arange(5,10):
                
            
-            
+                print('loading lasa ',i+1)
                 lasas[i].number=i+1
 
                 if info0[i]['CTP']==1 or info1[i]['CTP']==1 or info2[i]['CTP']==1:

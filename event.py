@@ -125,7 +125,7 @@ def find_counts(detector):
         detector.peak=np.max(counts_hold)
         
         print(detector.number,background_mean,background_rms)
-        
+        '''
         if(background_mean<300):
             detector.corrected_threshold=detector.threshold-background_mean
            
@@ -134,7 +134,8 @@ def find_counts(detector):
         else:
             detector.corrected_threshold=detector.threshold-detector.sec_mean
             print('finding threshold from second background: {0}  {1}  {2}'.format(detector.corrected_threshold,detector.threshold,detector.sec_mean))
-           
+        
+        
         if detector.corrected_threshold<0:
             detector.corrected_threshold=detector.threshold-detector.sec_mean
            
@@ -142,10 +143,14 @@ def find_counts(detector):
             print('~*~***~*~*~*~**~')
             print('what the heck is going on with this?????')
             print(detector.threshold,detector.sec_mean,background_mean)
-           
+        '''
+        
+        detector.corrected_threshold=detector.threshold
+
         if background_rms<10.0:
             corrected=counts_hold-background_mean
             peak=np.max(corrected)
+            print(peak)
             max_bin=np.argmax(corrected)
             if peak<LORA.Max_ADC_Count_V2:
                 BIN_S=int(max_bin-20) # start integration

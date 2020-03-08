@@ -178,11 +178,10 @@ def load_sec_information(info0,info1,info2,lasas,V):
                     lasas[i].sec_flag=1
                 lasas[i].CTP=np.asarray([info0[i]['CTP'],info1[i]['CTP'],info2[i]['CTP']])
                 lasas[i].GPS_time_stamp=np.asarray([info0[i]['GPS_time_stamp'],info1[i]['GPS_time_stamp'],info2[i]['GPS_time_stamp']])
-                lasas[i].sync_M=np.asarray([info0[i]['sync'],info1[i]['sync'],info2[i]['sync']])
-                lasas[i].quant_M=np.asarray([info0[i]['quant'],info1[i]['quant'],info2[i]['quant']])
+                lasas[i].sync=np.asarray([info0[i]['sync'],info1[i]['sync'],info2[i]['sync']])
+                lasas[i].quant=np.asarray([info0[i]['quant'],info1[i]['quant'],info2[i]['quant']])
                 lasas[i].YMD=np.asarray([info0[i]['YMD'],info1[i]['YMD'],info2[i]['YMD']])
-                print(lasas[i].CTP)
-          
+   
 
 
 

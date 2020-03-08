@@ -152,6 +152,11 @@ def find_counts(detector):
             peak=np.max(corrected)
             print(peak)
             max_bin=np.argmax(corrected)
+            total_count=0
+            BIN_S=int(max_bin-20) # start integration
+            BIN_E=int(max_bin+(int(LORA.Sig_Time_Window_V2/5.))) # end integration
+            total_count=np.sum(corrected[BIN_S:BIN_E])-np.sum(corrected[0:(int(LORA.Sig_Time_Window_V2/5.0))])
+            '''
             if peak<LORA.Max_ADC_Count_V2:
                 BIN_S=int(max_bin-20) # start integration
                 BIN_E=int(max_bin+(int(LORA.Sig_Time_Window_V2/5.0))) # end integration
@@ -161,7 +166,7 @@ def find_counts(detector):
                 BIN_S=int(max_bin-20) # start integration
                 BIN_E=int(max_bin+(int(LORA.Sig_Time_Window_V2/5.))) # end integration
                 total_count=np.sum(corrected[BIN_S:BIN_E])-np.sum(corrected[0:(int(LORA.Sig_Time_Window_V2/5.0))])
-
+            '''
             if total_count>0:
                 print('good count {0}'.format(total_count))
                 detector.trace_int_counts=total_count

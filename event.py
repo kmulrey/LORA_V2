@@ -211,7 +211,7 @@ def get_arrival_time(detector):
         
         
         flag=0
-        #print('number {0},counts {1}'.format(detector.number,detector.trace_int_counts))
+        print('number {0},counts {1}'.format(detector.number,detector.trace_int_counts))
 
         for i in np.arange(LORA.nTrace):
             print(i,cut,-1* detector.counts[i])

@@ -218,7 +218,7 @@ def get_arrival_time(detector):
             if -1*detector.counts[i]>(35) and flag==0:
                 if i>50:
                     detector.threshold_time_no_trig=i*5.0*10
-                    print('no trigger crossing ',i,cut,-1* detector.counts[i])
+                    #print('no trigger crossing ',i,cut,-1* detector.counts[i])
 
             
             if -1*detector.counts[i]>cut and flag==0:

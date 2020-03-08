@@ -215,6 +215,11 @@ def get_arrival_time(detector):
 
         for i in np.arange(LORA.nTrace):
             #print(i,cut,-1* detector.counts[i])
+            if -1*detector.counts[i]>(35) and flag==0:
+                if i>50:
+                    detector.threshold_time_no_trig=i*5.0*10
+                
+            
             if -1*detector.counts[i]>cut and flag==0:
                 if i<50:
                 
@@ -223,6 +228,8 @@ def get_arrival_time(detector):
                     print('found crossing ',i,cut,-1* detector.counts[i])
                     detector.threshold_time=i*5.0*10  # unit of 0.1 ns
                     flag=1
+
+
 
 def get_event_timestamp(detector,lasa):
     print('_______event timestamp______')

@@ -47,6 +47,7 @@ class Detector:
     trace_rms=0
     trace_int_counts=0
     threshold_time=0   # unit of ns
+    threshold_time_no_trig=0
     event_time_stamp=0  #cal timestamp
     threshold=0
     corrected_peak=0

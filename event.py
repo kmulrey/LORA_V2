@@ -151,7 +151,7 @@ def find_counts(detector):
             corrected=counts_hold-background_mean
             corrected_mean=np.average(corrected[0:50])
             peak=np.max(corrected)
-            print(peak)
+            #print(peak)
             max_bin=np.argmax(corrected)
             total_count=0
             BIN_S=int(max_bin-20) # start integration
@@ -211,11 +211,11 @@ def get_arrival_time(detector):
         
         
         flag=0
-        print('number {0},counts {1}'.format(detector.number,detector.trace_int_counts))
+        #print('number {0},counts {1}'.format(detector.number,detector.trace_int_counts))
 
         for i in np.arange(LORA.nTrace):
             #print(i,cut,detector.counts[i])
-            if detector.counts[i]>cut and flag==0:
+            if -1*detector.counts[i]>cut and flag==0:
                 if i<50:
                     continue
                 else:

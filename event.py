@@ -193,7 +193,9 @@ def get_arrival_time(detector):
                     
     else:
         
-        cut=1*detector.threshold
+        cut=1*detector.threshold/2
+        
+        
         flag=0
         print('number {0},counts {1}'.format(detector.number,detector.total_counts))
 

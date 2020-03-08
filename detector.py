@@ -198,7 +198,8 @@ def load_positions(detectors):
 
 def load_signal(detectors):
     
-    file=open(LORA.signal_retrieve_file,'r')
+    #file=open(LORA.signal_retrieve_file,'r')
+    file=LORA.signal_retrieve_file
     info=np.genfromtxt(file,skip_header=8,usecols=(1,2,3,4,5,6))
     file.close()
     for i in np.arange(LORA.nDetB):
@@ -211,7 +212,8 @@ def load_signal(detectors):
 
 def load_gain(detectors):
     
-    file=open(LORA.gain_cal_file,'r')
+    #file=open(LORA.gain_cal_file,'r')
+    file=LORA.gain_cal_file
     info=np.genfromtxt(file,usecols=(1))
     file.close()
     for i in np.arange(LORA.nDetA):

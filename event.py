@@ -404,39 +404,40 @@ def do_arrival_direction(detectors,event):
             S4=S4+detectors[i].y_cord
             S5=S5+detectors[i].cdt
             S6=S6+1
+    if counter>2:
+        P=(S1*S2)/S
+        Q=(T1*S2)/S
+        R=-((S2*S2)/S)+W
 
-    P=(S1*S2)/S
-    Q=(T1*S2)/S
-    R=-((S2*S2)/S)+W
-
-    t0=(T1*S1*R-R*S*S5+T1*P*S2-T1*S2*S3-S*S4*P+S*S4*S3)/(T1*Q*S2-T1*S2*S4+R*T1*T1-S*S4*Q+S*S4*S4-R*S*S6)
-    m=(P-t0*Q-S3+t0*S4)/R
-    l=(-S1/S)-((P*S2)/(R*S))+((t0*Q*S2)/(R*S))+((S2*S3)/(R*S))-((t0*S2*S4)/(R*S))+((t0*T1)/S)
-    n=np.sqrt(1.0-(l*l+m*m))
+        t0=(T1*S1*R-R*S*S5+T1*P*S2-T1*S2*S3-S*S4*P+S*S4*S3)/(T1*Q*S2-T1*S2*S4+R*T1*T1-S*S4*Q+S*S4*S4-R*S*S6)
+        m=(P-t0*Q-S3+t0*S4)/R
+        l=(-S1/S)-((P*S2)/(R*S))+((t0*Q*S2)/(R*S))+((S2*S3)/(R*S))-((t0*S2*S4)/(R*S))+((t0*T1)/S)
+        n=np.sqrt(1.0-(l*l+m*m))
     
     
     
-    print('direction params:  {0} {1}  {2}  {3}'.format(t0,m,l,n))
+        print('direction params:  {0} {1}  {2}  {3}'.format(t0,m,l,n))
 
-    if l*l+m*m<1:
+        if l*l+m*m<1:
 
-        theta=(np.arcsin(np.sqrt(l*l+m*m)))*(180.0/np.pi)    #Zenith in degrees (from vertical direction +Z)
-        phi=(np.arccos(m/np.sqrt(l*l+m*m)))*(180.0/np.pi)    #in degrees (Eastward from North)
-    else:
-        theta=0.0
-        phi=(np.arccos(m/np.sqrt(l*l+m*m)))*(180.0/np.pi)    #in degrees (Eastward from North)
+            theta=(np.arcsin(np.sqrt(l*l+m*m)))*(180.0/np.pi)    #Zenith in degrees (from vertical direction +Z)
+            phi=(np.arccos(m/np.sqrt(l*l+m*m)))*(180.0/np.pi)    #in degrees (Eastward from North)
+        else:
+            theta=0.0
+            phi=(np.arccos(m/np.sqrt(l*l+m*m)))*(180.0/np.pi)    #in degrees (Eastward from North)
 
         
-    if l<0:
-        phi=360.0-phi
+        if l<0:
+            phi=360.0-phi
 
 
 
-    event.theta=theta
-    event.phi=phi
-    event.elevation=90.0-theta
-    print('theta: {0:.2f}   phi: {1:.2f}    el: {2:.2f}'.format(event.theta,event.phi,event.elevation))
-
+        event.theta=theta
+        event.phi=phi
+        event.elevation=90.0-theta
+        print('theta: {0:.2f}   phi: {1:.2f}    el: {2:.2f}'.format(event.theta,event.phi,event.elevation))
+    else:
+        print('not enough stations to reconstruct direction')
 
 def do_COM_core(detectors,event):
 

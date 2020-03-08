@@ -39,7 +39,7 @@ osm_data_aera= d['data_osm_aera']
 event_data= d['data_event']
 
 
-event_list=header_data['Event_Id'][header_data['Event_Size']>0]
+event_list=header_data['Event_Id'][header_data['Event_Size']>10]
 nEvents=len(event_list)
 
 

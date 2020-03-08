@@ -20,8 +20,9 @@ outputdir='/vol/astro3/lofar/lora/testOutputV2/'
 path='/vol/astro3/lofar/vhecr/lora_triggered/LORAraw/'
 path2='new_files/'
   
-def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_aera,event_data):
-
+def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_aera,event_data,file_name):
+    
+    
 
     time_event=header_data['GPS_Time_Stamp_FirstHit'][header_data['Event_Id']==eventID]
     ns_event=header_data['nsec_Online_FirstHit'][header_data['Event_Id']==eventID]
@@ -126,6 +127,15 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
         print('saving to file')
     
     
-    
-    
-    
+        outputfile=open(outputdir+file_name+'_event_'+str(eventID)+'.txt','w')
+        outputfile.write('event:  {0}\n'.format(str(eventID)))
+        outputfile.write('gps_timestamp:  {0}\n'.format(int(time_event[0])))
+        outputfile.write('ns:  {0}\n'.format(int(ns_event[0])))
+        outputfile.write('index:  {0}\n'.format(index[0][0]))
+        outputfile.write('theta:  {0}\n'.format(ev.theta))
+        outputfile.write('phi:  {0}\n'.format(ev.phi))
+        outputfile.write('core_x:  {0}\n'.format(ev.x_core))
+        outputfile.write('core_y:  {0}\n'.format(ev.y_core))
+        outputfile.write('core_z:  {0}\n'.format(ev.z_core))
+            outputfile.write('{0}     {1}     {2}    {3}     {4}\n'.format(i+1,detectors[i].gps,detectors[i].nsec,detectors[i].event_time_stamp,detectors[i].density))
+        outputfile.close()

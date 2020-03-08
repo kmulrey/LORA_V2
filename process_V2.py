@@ -109,12 +109,16 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
     
     
     event.do_arrival_time_diff(detectors)
-    event.do_arrival_direction(detectors,ev)
-    event.do_COM_core(detectors,ev)
-    event.find_density(detectors,ev)#
+    try:
+        event.do_arrival_direction(detectors,ev)
+        event.do_COM_core(detectors,ev)
+        event.find_density(detectors,ev)#
+        print('\n\n-------->event fit\n\n')
 
-    event.fit_arrival_direction(detectors,ev)
-    event.fit_NKG(detectors,ev)
+
+    except:
+        event.flag=1
+        print('\n\nissue with event\n\n')
 
     
     

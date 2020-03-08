@@ -117,7 +117,7 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
         print('flag?? ',event.direction_flag)
     '''
     except:
-        event.flag=1
+        event.event_flag=1
         print('\n\nissue with event\n\n')
     '''
     

@@ -52,7 +52,7 @@ class Event:
     Energy_RefA=0
     EnergyErr_RefA=0
     direction_flag=0
-    event_flad=0
+    event_flag=0
 
 
 def read_attenuation():

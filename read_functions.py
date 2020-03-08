@@ -674,7 +674,7 @@ def return_second_data_V2(event_id,event_GPS, event_ns,osm_data_hisparc,osm_data
 
     for t in np.arange(3):
         #for i in np.arange(1):
-        for i in np.arange(LORA.nLASA):
+        for i in np.arange(LORA.nLasaB):
             lasa=i+1
             #master
             #print 'getting OSM for {0}'.format(i+1)

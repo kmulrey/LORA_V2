@@ -382,7 +382,7 @@ def do_arrival_time_diff(detectors):
     event_weight=np.zeros([40])
 
     ind_0=1000
-    time_min=1e10
+    time_min=1e11
     for i in np.arange(40):
         if detectors[i].trace_int_counts>5:
             event_times[i]=detectors[i].final_event_time

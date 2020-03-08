@@ -201,6 +201,7 @@ def get_arrival_time(detector):
 
             if detector.counts[i]>cut and flag==0:
                 if i<50:
+                    print('peak too early')
                     continue
                 else:
                     detector.threshold_time=i*5.0*10  # unit of 0.1 ns

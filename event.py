@@ -459,7 +459,7 @@ def do_COM_core(detectors,event):
         
 
         
-    
+    print('Event size: {0}'.format(Event_Size))
     event.x_core=SumX/Event_Size
     event.y_core=SumY/Event_Size
     event.z_core=0     #we assume that all the LORA detectors are at z=0

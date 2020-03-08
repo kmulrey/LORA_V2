@@ -270,7 +270,7 @@ def get_event_timestamp_V2(detector,lasa):
                 #print detector.event_time_stamp
                 
     else:
-        if lasa.sec_flag!=1:
+        if lasa.sec_flag!=2:  # hack for the moment because something is off here
             detector.event_time_stamp=10*(lasa.sync[0]+lasa.quant[1]+(1.0*detector.ctd/lasa.CTP[1])*(1000000000.0-lasa.quant[1]+lasa.quant[2]))
             print(lasa.sync[0],lasa.quant[1],detector.ctd,detector.event_time_stamp,lasa.CTP[1],lasa.quant[2])
         else:

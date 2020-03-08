@@ -446,7 +446,7 @@ def do_COM_core(detectors,event):
     SumX=0
     SumY=0
     
-    for i in np.arange(LORA.40):
+    for i in np.arange(40):
     
         x=detectors[i].trace_int_counts/detectors[i].gain/(LORA.Det_Area*np.cos(event.theta*np.pi/180.0))
         

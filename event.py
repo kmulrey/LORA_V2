@@ -197,7 +197,7 @@ def get_arrival_time(detector):
         
         
         flag=0
-        print('number {0},counts {1}'.format(detector.number,detector.total_counts))
+        print('number {0},counts {1}'.format(detector.number,detector.trace_int_counts))
 
         for i in np.arange(LORA.nTrace):
             #print(i,cut,detector.counts[i])
@@ -360,7 +360,7 @@ def do_arrival_time_diff(detectors):
     ind_0=1000
     time_min=1e10
     for i in np.arange(40):
-        if detectors[i].trace_int_counts>10:
+        if detectors[i].trace_int_counts>5:
             event_times[i]=detectors[i].final_event_time
             event_weight[i]=detectors[i].trace_int_counts/detectors[i].gain
             print(i, event_times[i],event_weight[i])
@@ -391,7 +391,7 @@ def do_arrival_direction(detectors,event):
     
     counter=0
     
-    for i in np.arange(LORA.nDetA):
+    for i in np.arange(LORA.40):
         if detectors[i].cdt>=0:
             counter=counter+1
             S=S+detectors[i].x_cord**2
@@ -469,7 +469,7 @@ def do_COM_core(detectors,event):
 def find_density(detectors,event):
 
     
-    for i in np.arange(LORA.nDetA):
+    for i in np.arange(40):
         detectors[i].density=detectors[i].trace_int_counts/detectors[i].gain/(LORA.Det_Area*np.cos(event.theta*np.pi/180.0))
         detectors[i].err_density=np.power(detectors[i].density,0.5) ;    #Assuming possionian error
         if detectors[i].density<=LORA.Density_Cut:

@@ -180,7 +180,7 @@ def retrive_sat_signal(detector):
 
 def get_arrival_time(detector):
 
-    if detector.number<=20:
+    if detector.number<20:
         cut=LORA.Det_Thres*detector.trace_rms+detector.trace_mean
         flag=0
         for i in np.arange(LORA.nTrace):

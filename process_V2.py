@@ -21,9 +21,8 @@ path='/vol/astro3/lofar/vhecr/lora_triggered/LORAraw/'
 path2='new_files/'
   
 def runEvent(file):
-  
-  LOFAR_id=str(int(time_event-LORAparameters.event_id_offset))
-  ev=event.Event(LOFAR_id,'V2')
+    LOFAR_id=str(int(time_event-LORAparameters.event_id_offset))
+    ev=event.Event(LOFAR_id,'V2')
   
   
   

@@ -621,6 +621,7 @@ def return_event_V2(event_id,event_GPS, event_ns,event_data):
     ctd=CTD[Event_Id==event_id]
     gps=GPS_Time_Stamp[Event_Id==event_id]
     thresh=Trigg_Threshold[Event_Id==event_id]
+    print('threshold--> ',thresh)
     #print counts.shape
     all_info=[]
     log_all_info=[]

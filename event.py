@@ -163,6 +163,7 @@ def find_counts(detector):
                 total_count=np.sum(corrected[BIN_S:BIN_E])-np.sum(corrected[0:(int(LORA.Sig_Time_Window_V2/5.0))])
 
             if total_count>0:
+                print('good count {0}'.format(total_count))
                 detector.trace_int_counts=total_count
 
             detector.corrected_peak=peak

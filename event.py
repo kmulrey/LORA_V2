@@ -310,16 +310,17 @@ def do_arrival_time_diff(detectors):
 
     ind_0=1000
     time_min=1e10
-    for i in np.arange(LORA.nDetA):
-        event_times[i]=detectors[i].final_event_time
-        event_weight[i]=detectors[i].trace_int_counts
-        print(i, event_times[i],event_weight[i])
-        if event_times[i]<time_min and event_times[i]!=0:
-            time_min=event_times[i]
-            ind_0=i
+    for i in np.arange(40):
+        if detectors[i].trace_int_counts>10:
+            event_times[i]=detectors[i].final_event_time
+            event_weight[i]=detectors[i].trace_int_counts/detectors[i].gain
+            print(i, event_times[i],event_weight[i])
+            if event_times[i]<time_min and event_times[i]!=0:
+                time_min=event_times[i]
+                ind_0=i
     #print ind_0, event_times[ind_0]
 
-    for i in np.arange(LORA.nDetA):
+    for i in np.arange(40):
         if(event_times[i]>0 and event_weight[i]>0):
             detectors[i].cdt=(event_times[i]-event_times[ind_0])*0.1*(1.e-9*LORA.vel_light)
 

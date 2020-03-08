@@ -51,7 +51,7 @@ class Event:
     NeErr_RefA=0
     Energy_RefA=0
     EnergyErr_RefA=0
-
+    direction_flag=0
 
 
 
@@ -438,6 +438,7 @@ def do_arrival_direction(detectors,event):
         print('theta: {0:.2f}   phi: {1:.2f}    el: {2:.2f}'.format(event.theta,event.phi,event.elevation))
     else:
         print('not enough stations to reconstruct direction')
+        event.direction_flag=1
 
 def do_COM_core(detectors,event):
 
@@ -458,13 +459,13 @@ def do_COM_core(detectors,event):
             SumY=SumY+detectors[i].trace_int_counts/detectors[i].gain*detectors[i].y_cord
         
 
-        
-    print('Event size: {0}'.format(Event_Size))
-    event.x_core=SumX/Event_Size
-    event.y_core=SumY/Event_Size
-    event.z_core=0     #we assume that all the LORA detectors are at z=0
+    if event.direction_flag==0:
+        print('Event size: {0}'.format(Event_Size))
+        event.x_core=SumX/Event_Size
+        event.y_core=SumY/Event_Size
+        event.z_core=0     #we assume that all the LORA detectors are at z=0
 
-    print('core: ({0:.2f}, {1:.2f}, {2:.2f})'.format(event.x_core,event.y_core,event.z_core))
+        print('core: ({0:.2f}, {1:.2f}, {2:.2f})'.format(event.x_core,event.y_core,event.z_core))
 
 
 def find_density(detectors,event):

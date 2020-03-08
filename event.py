@@ -391,7 +391,7 @@ def do_arrival_direction(detectors,event):
     
     counter=0
     
-    for i in np.arange(LORA.40):
+    for i in np.arange(40):
         if detectors[i].cdt>=0:
             counter=counter+1
             S=S+detectors[i].x_cord**2

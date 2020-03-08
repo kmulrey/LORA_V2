@@ -126,7 +126,7 @@ def find_counts(detector):
         
         print(detector.number,background_mean,background_rms)
         
-        if(background_mean<300 and background_mean>0):
+        if(background_mean<300):
             detector.corrected_threshold=detector.threshold-background_mean
            
             #print 'finding threshold from real background: {0}  {1}  {2}'.format(detector.corrected_threshold,detector.threshold,background_mean)

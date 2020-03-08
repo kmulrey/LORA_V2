@@ -216,7 +216,7 @@ def load_gain(detectors):
     file=LORA.gain_cal_file
     info=np.genfromtxt(file,usecols=(1))
     #file.close()
-    for i in np.arange(LORA.nDetA):
+    for i in np.arange(40):
         detectors[i].gain=info[i]
 
 

@@ -317,9 +317,9 @@ def cal_event_timestamp(detectors,lasa):
     
 
         for i in np.arange(4):
-            if detectors[4*int(lasa_ind)+i].threshold_time>0:
+            if detectors[4*int(lasa_ind)+i].threshold_time_no_trig>0:
         
-                detectors[4*int(lasa_ind)+i].cal_time=detectors[4*int(lasa_ind)+i].threshold_time-trigg_time+detectors[lasa_ind*4].event_time_stamp+det.cable_delay[4*int(lasa_ind)+i]
+                detectors[4*int(lasa_ind)+i].cal_time=detectors[4*int(lasa_ind)+i].threshold_time_no_trig-trigg_time+detectors[lasa_ind*4].event_time_stamp+det.cable_delay[4*int(lasa_ind)+i]
                 detectors[4*int(lasa_ind)+i].final_event_time=detectors[4*int(lasa_ind)+i].cal_time
                 print(detectors[4*int(lasa_ind)+i].number,  detectors[4*int(lasa_ind)+i].final_event_time)
 

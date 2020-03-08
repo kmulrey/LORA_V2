@@ -276,7 +276,7 @@ def get_event_timestamp_V2(detector,lasa):
         else:
             print('flagged event')
             detector.event_time_stamp=10*detector.nsec
-            #print detector.event_time_stamp
+            print detector.event_time_stamp
 
 
 
@@ -397,7 +397,7 @@ def do_arrival_time_diff(detectors):
         if(event_times[i]>0 and event_weight[i]>0):
             detectors[i].cdt=(event_times[i]-event_times[ind_0])*0.1*(1.e-9*LORA.vel_light)
 
-
+        print(i,detectors[i].cdt)
 def do_arrival_direction(detectors,event):
 
     P=0

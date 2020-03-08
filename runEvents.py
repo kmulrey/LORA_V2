@@ -46,7 +46,7 @@ nEvents=len(event_list)
 process_list=[]
 
 print(nEvents)
-for i in np.arange(nEvents):
+for i in np.arange(100):
     #print(np.unique(event_data['Station'][event_data['Event_Id']==event_list[i]]))
     stns=np.unique(event_data['Station'][event_data['Event_Id']==event_list[i]])
     if stns[0]>5 or len(stns)>1:

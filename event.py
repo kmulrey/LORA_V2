@@ -215,7 +215,7 @@ def get_arrival_time(detector):
 
         for i in np.arange(LORA.nTrace):
             #print(i,cut,-1* detector.counts[i])
-            if -1*detector.counts[i]>(35) and flag==0:
+            if -1*detector.counts[i]>(45) and flag==0:
                 if i>50:
                     detector.threshold_time_no_trig=i*5.0*10
                     #print('no trigger crossing ',i,cut,-1* detector.counts[i])
@@ -284,15 +284,15 @@ def cal_event_timestamp(detectors,lasa):
     #print '_____________________________________'
     #print 'lasa number: {0}'.format(lasa.number)
     lasa_ind=int(lasa.number-1)
-    print('lasa index: {0}'.format(lasa_ind))
-    print('trigger condition: {0}'.format(detectors[4*lasa_ind].trigg_condition))
+    #print('lasa index: {0}'.format(lasa_ind))
+    #print('trigger condition: {0}'.format(detectors[4*lasa_ind].trigg_condition))
     trigg_cond=detectors[4*lasa_ind].trigg_condition
     thresh_times=np.asarray([detectors[4*int(lasa.number-1)].threshold_time,detectors[4*int(lasa.number-1)+1].threshold_time,detectors[4*int(lasa.number-1)+2].threshold_time,detectors[4*int(lasa.number-1)+3].threshold_time])
-    print(thresh_times)
+    #print(thresh_times)
     thresh_use=1.0*thresh_times[thresh_times!=0]
-    print('thresh_use: ',thresh_use)
+    #print('thresh_use: ',thresh_use)
     args=np.argsort(thresh_use)
-    print(int(args[1]-1))
+    #print(int(args[1]-1))
 
     if len(thresh_use)>1:
         print('trigger condition: ',trigg_cond)
@@ -321,7 +321,7 @@ def cal_event_timestamp(detectors,lasa):
         
                 detectors[4*int(lasa_ind)+i].cal_time=detectors[4*int(lasa_ind)+i].threshold_time_no_trig-trigg_time+detectors[lasa_ind*4].event_time_stamp+det.cable_delay[4*int(lasa_ind)+i]
                 detectors[4*int(lasa_ind)+i].final_event_time=detectors[4*int(lasa_ind)+i].cal_time
-                print(detectors[4*int(lasa_ind)+i].number,  detectors[4*int(lasa_ind)+i].final_event_time)
+                #print(detectors[4*int(lasa_ind)+i].number,  detectors[4*int(lasa_ind)+i].final_event_time)
 
             # maybe this has to be corrected for wrap-around seconds
 

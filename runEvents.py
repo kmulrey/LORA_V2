@@ -54,3 +54,7 @@ for i in np.arange(nEvents):
         #print('processing: ',event_list[i],stns)
         
 print(len(process_list))
+
+for i in np.arange(1):
+    eventID=event_list[i]
+    process_V2.runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_aera,event_data)

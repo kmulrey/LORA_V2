@@ -20,7 +20,12 @@ outputdir='/vol/astro3/lofar/lora/testOutputV2/'
 path='/vol/astro3/lofar/vhecr/lora_triggered/LORAraw/'
 path2='new_files/'
   
-def runEvent(file):
+def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_aera,event_data):
+
+
+    time_event=header_data['GPS_Time_Stamp_FirstHit'][header_data['Event_Id']==eventID]
+    ns_event=header_data['nsec_Online_FirstHit'][header_data['Event_Id']==eventID]
+
     LOFAR_id=str(int(time_event-LORAparameters.event_id_offset))
     ev=event.Event(LOFAR_id,'V2')
   

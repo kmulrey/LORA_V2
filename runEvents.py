@@ -47,7 +47,7 @@ nEvents=len(event_list)
 process_list=[]
 
 print(nEvents)
-for i in np.arange(100):
+for i in np.arange(nEvents):
     #print(np.unique(event_data['Station'][event_data['Event_Id']==event_list[i]]))
     stns=np.unique(event_data['Station'][event_data['Event_Id']==event_list[i]])
     if stns[0]>5 or len(stns)>1:
@@ -56,6 +56,9 @@ for i in np.arange(100):
         
 print(len(process_list))
 
-for i in np.arange(1):
+for i in np.arange(len(process_list)):
     eventID=event_list[i]
-    process_V2.runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_aera,event_data,file_name)
+    try:
+        process_V2.runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_aera,event_data,file_name)
+    except:
+        print('{0} failed'.format(eventID))

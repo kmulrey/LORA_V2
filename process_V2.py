@@ -137,5 +137,5 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
         outputfile.write('core_x:  {0}\n'.format(ev.x_core))
         outputfile.write('core_y:  {0}\n'.format(ev.y_core))
         outputfile.write('core_z:  {0}\n'.format(ev.z_core))
-            outputfile.write('{0}     {1}     {2}    {3}     {4}\n'.format(i+1,detectors[i].gps,detectors[i].nsec,detectors[i].event_time_stamp,detectors[i].density))
+        outputfile.write('{0}     {1}     {2}    {3}     {4}\n'.format(i+1,detectors[i].gps,detectors[i].nsec,detectors[i].event_time_stamp,detectors[i].density))
         outputfile.close()

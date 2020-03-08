@@ -124,7 +124,7 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
         ev.event_flag=1
         print('\n\nissue with event\n\n')
     
-    if ev.event_flag==0 and ev.direction_flag==0:
+    if ev.event_flag==0:# and ev.direction_flag==0:
         print('saving to file')
         
     

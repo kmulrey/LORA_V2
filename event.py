@@ -354,8 +354,8 @@ def cal_event_timestamp(detectors,lasa):
 '''
 
 def do_arrival_time_diff(detectors):
-    event_times=np.zeros([LORA.nDetA])
-    event_weight=np.zeros([LORA.nDetA])
+    event_times=np.zeros([40])
+    event_weight=np.zeros([40])
 
     ind_0=1000
     time_min=1e10

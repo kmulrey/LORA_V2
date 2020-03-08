@@ -26,3 +26,31 @@ path2='new_files/'
 file_name='20200302_0051'
 file=path2+file_name+'.npz'
 print(file)
+
+
+d = joblib.load(file)
+
+log_data= d['data_log']
+config_data= d['data_config']
+header_data= d['data_header']
+osm_data_hisparc= d['data_osm_hisparc']
+osm_data_aera= d['data_osm_aera']
+
+event_data= d['data_event']
+
+
+event_list=header_data['Event_Id'][header_data['Event_Size']>0]
+nEvents=len(event_list)
+
+
+process_list=[]
+
+print(nEvents)
+for i in np.arange(nEvents):
+    #print(np.unique(event_data['Station'][event_data['Event_Id']==event_list[i]]))
+    stns=np.unique(event_data['Station'][event_data['Event_Id']==event_list[i]])
+    if stns[0]>5 or len(stns)>1:
+        process_list.append(event_list[i])
+        #print('processing: ',event_list[i],stns)
+        
+print(len(process_list))

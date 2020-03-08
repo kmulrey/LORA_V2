@@ -149,13 +149,14 @@ def find_counts(detector):
 
         if background_rms<10.0:
             corrected=counts_hold-background_mean
+            corrected_mean=np.average(corrected[0:50])
             peak=np.max(corrected)
             print(peak)
             max_bin=np.argmax(corrected)
             total_count=0
             BIN_S=int(max_bin-20) # start integration
             BIN_E=int(max_bin+(int(LORA.Sig_Time_Window_V2/5.))) # end integration
-            total_count=np.sum(corrected[BIN_S:BIN_E])#-np.sum(corrected[0:(int(LORA.Sig_Time_Window_V2/5.0))])
+            total_count=np.sum(corrected[BIN_S:BIN_E])-corrected_mean#-np.sum(corrected[0:(int(LORA.Sig_Time_Window_V2/5.0))])
             print('total count {0}'.format(total_count))
 
             '''

@@ -155,7 +155,7 @@ def find_counts(detector):
             total_count=0
             BIN_S=int(max_bin-20) # start integration
             BIN_E=int(max_bin+(int(LORA.Sig_Time_Window_V2/5.))) # end integration
-            total_count=np.sum(corrected[BIN_S:BIN_E])-np.sum(corrected[0:(int(LORA.Sig_Time_Window_V2/5.0))])
+            total_count=np.sum(corrected[BIN_S:BIN_E])#-np.sum(corrected[0:(int(LORA.Sig_Time_Window_V2/5.0))])
             print('total count {0}'.format(total_count))
 
             '''

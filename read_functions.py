@@ -703,7 +703,7 @@ def return_second_data_V2(event_id,event_GPS, event_ns,osm_data_hisparc,osm_data
             else:
                 
                 gps= GPS_Time_Stamp_A[(GPS_Time_Stamp_A==(event_GPS+t))*(Station_A==i+1)]
-                print(Station_A, gps)
+                print(i+1,t, gps)
                 if len(gps>0):
                     sync= Sync_Error_A[(GPS_Time_Stamp_A==(event_GPS+t))*(Station_A==i+1)]
                     quant= Quant_Error_A[(GPS_Time_Stamp_A==(event_GPS+t))*(Station_A==i+1)]

@@ -136,7 +136,7 @@ def load_sec_information(info0,info1,info2,lasas,V):
            
     if V=='V2':
      
-          for i in np.arange(10):
+          for i in np.arange(5):
             
                 lasas[i].number=i+1
 
@@ -162,7 +162,7 @@ def load_sec_information(info0,info1,info2,lasas,V):
 
                 lasas[i].YMD_M=np.asarray([info0[i]['YMD_M'],info1[i]['YMD_M'],info2[i]['YMD_M']])
                 lasas[i].YMD_S=np.asarray([info0[i]['YMD_S'],info1[i]['YMD_S'],info2[i]['YMD_S']])
-          '''
+          
           for i in np.arange(5,10):
                
            
@@ -181,7 +181,7 @@ def load_sec_information(info0,info1,info2,lasas,V):
                 lasas[i].quant_M=np.asarray([info0[i]['quant'],info1[i]['quant'],info2[i]['quant']])
                 lasas[i].YMD=np.asarray([info0[i]['YMD'],info1[i]['YMD'],info2[i]['YMD']])
 
-          '''
+          
 
 
 

@@ -626,7 +626,7 @@ def return_event_V2(event_id,event_GPS, event_ns,event_data):
     log_all_info=[]
     
 
-    for d in np.arange(LORA.nLORA):
+    for d in np.arange(40):
         if (d+1) in dets:
             ind=np.where(dets==(d+1))[0][0]
             #print d+1, dets[ind], total_counts[ind]

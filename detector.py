@@ -225,10 +225,33 @@ def load_log_information(info,detectors):
     #print info[0].keys()
     for i in np.arange(20):
         detectors[i].threshold=info[i]['threshold']/0.48
+    '''
     if len(detectors)>20:
         for i in np.arange(20,40):
             detectors[i].threshold=info[i]['threshold']
-            
+            detectors[i].threshold=info[i]['threshold']
+    '''
+    detectors[20].threshold=threshold=info[20]['threshold']
+    detectors[21].threshold=threshold=info[20]['threshold']
+    detectors[22].threshold=threshold=info[20]['threshold']
+    detectors[23].threshold=threshold=info[20]['threshold']
+    detectors[24].threshold=threshold=info[24]['threshold']
+    detectors[25].threshold=threshold=info[24]['threshold']
+    detectors[26].threshold=threshold=info[24]['threshold']
+    detectors[27].threshold=threshold=info[24]['threshold']
+    detectors[28].threshold=threshold=info[28]['threshold']
+    detectors[29].threshold=threshold=info[28]['threshold']
+    detectors[30].threshold=threshold=info[28]['threshold']
+    detectors[31].threshold=threshold=info[28]['threshold']
+    detectors[32].threshold=threshold=info[32]['threshold']
+    detectors[33].threshold=threshold=info[32]['threshold']
+    detectors[34].threshold=threshold=info[32]['threshold']
+    detectors[35].threshold=threshold=info[32]['threshold']
+    detectors[36].threshold=threshold=info[36]['threshold']
+    detectors[37].threshold=threshold=info[36]['threshold']
+    detectors[38].threshold=threshold=info[36]['threshold']
+    detectors[39].threshold=threshold=info[36]['threshold']
+    
 def load_noise_information(info,detectors):
     #print info[0].keys()
     for i in np.arange(len(detectors)):

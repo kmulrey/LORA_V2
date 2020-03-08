@@ -115,7 +115,7 @@ def find_counts(detector):
             detector.corrected_peak=peak
 
     else:
-        print('running counts V2')
+        #print('running counts V2')
         counts_hold=detector.counts*-1.0
         background=counts_hold[0:50]
         background_mean=np.average(background)
@@ -124,7 +124,7 @@ def find_counts(detector):
         detector.trace_mean=background_mean
         detector.peak=np.max(counts_hold)
         
-        print(detector.number,background_mean,background_rms)
+        #print(detector.number,background_mean,background_rms)
         '''
         if(background_mean<300):
             detector.corrected_threshold=detector.threshold-background_mean
@@ -157,7 +157,7 @@ def find_counts(detector):
             BIN_S=int(max_bin-20) # start integration
             BIN_E=int(max_bin+(int(LORA.Sig_Time_Window_V2/5.))) # end integration
             total_count=np.sum(corrected[BIN_S:BIN_E])-corrected_mean#-np.sum(corrected[0:(int(LORA.Sig_Time_Window_V2/5.0))])
-            print('total count {0}'.format(total_count))
+            #print('total count {0}'.format(total_count))
 
             '''
             if peak<LORA.Max_ADC_Count_V2:
@@ -171,7 +171,7 @@ def find_counts(detector):
                 total_count=np.sum(corrected[BIN_S:BIN_E])-np.sum(corrected[0:(int(LORA.Sig_Time_Window_V2/5.0))])
             '''
             if total_count>0:
-                print('good count {0}'.format(total_count))
+                #print('good count {0}'.format(total_count))
                 detector.trace_int_counts=total_count
 
             detector.corrected_peak=peak

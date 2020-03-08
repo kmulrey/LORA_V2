@@ -649,7 +649,7 @@ def return_event_V2(event_id,event_GPS, event_ns,event_data):
 
 
 
-def return_second_data_V2(event_id,event_GPS, event_ns,osm_data_hisparc):#,osm_data_aera):
+def return_second_data_V2(event_id,event_GPS, event_ns,osm_data_hisparc,osm_data_aera):
 
 
     Station_H=osm_data_hisparc['Station']
@@ -659,14 +659,14 @@ def return_second_data_V2(event_id,event_GPS, event_ns,osm_data_hisparc):#,osm_d
     Quant_Error_H=osm_data_hisparc['Quant_Error']
     CTP_H=osm_data_hisparc['CTP']
     
-    '''
+    
     Station_A=osm_data_aera['Station']
     GPS_Time_Stamp_A=osm_data_aera['GPS_Time_Stamp']
     Sync_Error_A=osm_data_aera['Sync_Error']
     Quant_Error_A=osm_data_aera['Quant_Error']
     CTP_A=osm_data_aera['CTP']
     UTC_offset_A=osm_data_aera['UTC_offset']
-    '''
+    
     
     all_info=[]
     all_info1=[]
@@ -701,7 +701,7 @@ def return_second_data_V2(event_id,event_GPS, event_ns,osm_data_hisparc):#,osm_d
             
             else:
                 print('no')
-                '''
+                
                 gps= GPS_Time_Stamp_A[(GPS_Time_Stamp_A==(event_GPS+t))*(Station_A==i+1)]
                 if len(gps>0):
                     sync= Sync_Error_A[(GPS_Time_Stamp_A==(event_GPS+t))*(Station_A==i+1)]
@@ -713,7 +713,7 @@ def return_second_data_V2(event_id,event_GPS, event_ns,osm_data_hisparc):#,osm_d
                     info={'lasa':lasa,'YMD':ymd,'GPS_time_stamp':gps,'sync':sync,'CTP':ctp,'quant':quant}
                 else:
                     info={'lasa':lasa,'YMD':np.asarray([0]),'GPS_time_stamp':np.asarray([0]),'sync':np.asarray([0]),'CTP':np.asarray([0]),'quant':np.asarray([0])}
-                '''
+                
             
             if t==0:
                 all_info.append(info)

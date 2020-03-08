@@ -193,7 +193,7 @@ def get_arrival_time(detector):
                     
     else:
         
-        cut=1*detector.threshold/2
+        cut=1*detector.threshold
         
         
         flag=0

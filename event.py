@@ -124,7 +124,7 @@ def find_counts(detector):
         detector.trace_mean=background_mean
         detector.peak=np.max(counts_hold)
         
-        #print(detector.number,background_mean,background_rms)
+        print(detector.number,background_mean,background_rms)
         
         if(background_mean<300 and background_mean>0):
             detector.corrected_threshold=detector.threshold-background_mean

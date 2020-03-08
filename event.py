@@ -397,7 +397,7 @@ def do_arrival_time_diff(detectors):
         if(event_times[i]>0 and event_weight[i]>0):
             detectors[i].cdt=(event_times[i]-event_times[ind_0])*0.1*(1.e-9*LORA.vel_light)
 
-        print(i,detectors[i].cdt)
+        #print(i,detectors[i].cdt)
 def do_arrival_direction(detectors,event):
 
     P=0
@@ -436,6 +436,7 @@ def do_arrival_direction(detectors,event):
         t0=(T1*S1*R-R*S*S5+T1*P*S2-T1*S2*S3-S*S4*P+S*S4*S3)/(T1*Q*S2-T1*S2*S4+R*T1*T1-S*S4*Q+S*S4*S4-R*S*S6)
         m=(P-t0*Q-S3+t0*S4)/R
         l=(-S1/S)-((P*S2)/(R*S))+((t0*Q*S2)/(R*S))+((S2*S3)/(R*S))-((t0*S2*S4)/(R*S))+((t0*T1)/S)
+        print(l,m)
         n=np.sqrt(1.0-(l*l+m*m))
     
     

@@ -140,5 +140,7 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
         outputfile.write('core_z:  {0}\n'.format(ev.z_core))
         for i in np.arange(40):
             print(i+1, detectors[i].density)
+            if detectors[i].event_time_stamp<0 or detectors[i].event_time_stamp>1e11:
+                detectors[i].event_time_stamp=0
             outputfile.write('{0}     {1}     {2}    {3}     {4}\n'.format(i+1,detectors[i].gps,detectors[i].nsec,int(detectors[i].event_time_stamp),detectors[i].density))
         outputfile.close()

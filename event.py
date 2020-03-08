@@ -256,8 +256,8 @@ def cal_event_timestamp(detectors,lasa):
     #print '_____________________________________'
     #print 'lasa number: {0}'.format(lasa.number)
     lasa_ind=int(lasa.number-1)
-    #print 'lasa index: {0}'.format(lasa_ind)
-    #print 'trigger condition: {0}'.format(detectors[4*lasa_ind].trigg_condition)
+    print('lasa index: {0}'.format(lasa_ind))
+    print('trigger condition: {0}'.format(detectors[4*lasa_ind].trigg_condition))
     trigg_cond=detectors[4*lasa_ind].trigg_condition
     thresh_times=np.asarray([detectors[4*int(lasa.number-1)].threshold_time,detectors[4*int(lasa.number-1)+1].threshold_time,detectors[4*int(lasa.number-1)+2].threshold_time,detectors[4*int(lasa.number-1)+3].threshold_time])
     thresh_use=1.0*thresh_times[thresh_times!=0]
@@ -265,8 +265,8 @@ def cal_event_timestamp(detectors,lasa):
     args=np.argsort(thresh_use)
     #print int(args[detectors[0].trigg_condition]-1)
     if len(thresh_use)>1:
-        #print 'trigger condition: ',trigg_cond
-        #print 'sorted: {0}'.format(np.sort(thresh_use))
+        print('trigger condition: ',trigg_cond)
+        print('sorted: {0}'.format(np.sort(thresh_use)))
         #print thresh_use
         #print args
         #print 'use index: {0}'.format(args[int(trigg_cond)-1])

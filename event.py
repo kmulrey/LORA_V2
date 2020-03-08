@@ -195,9 +195,9 @@ def get_arrival_time(detector):
         
         cut=1*detector.threshold
         flag=0
+        print('number {0},counts {1}'.format(detector.number,detector.counts[i]))
 
         for i in np.arange(LORA.nTrace):
-            print('number {0},counts {1}'.format(detector.number,detector.counts[i]))
 
             if detector.counts[i]>cut and flag==0:
                 if i<50:

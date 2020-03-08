@@ -136,7 +136,7 @@ def load_sec_information(info0,info1,info2,lasas,V):
            
     if V=='V2':
      
-          for i in np.arange(5):
+          for i in np.arange(10):
             
                 lasas[i].number=i+1
 

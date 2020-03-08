@@ -116,13 +116,13 @@ def find_counts(detector):
 
     else:
         print('running counts V2')
-        detector.counts=detector.counts*-1.0
-        background=detector.counts[0:50]
+        counts_hold=detector.counts*-1.0
+        background=counts_hold[0:50]
         background_mean=np.average(background)
         background_rms=np.std(background)
         detector.trace_rms=background_rms
         detector.trace_mean=background_mean
-        detector.peak=np.max(detector.counts)
+        detector.peak=np.max(counts_hold)
         
         #print(detector.number,background_mean,background_rms)
         
@@ -144,7 +144,7 @@ def find_counts(detector):
             print(detector.threshold,detector.sec_mean,background_mean)
            
         if background_rms<10.0:
-            corrected=detector.counts-background_mean
+            corrected=counts_hold-background_mean
             peak=np.max(corrected)
             max_bin=np.argmax(corrected)
             if peak<LORA.Max_ADC_Count_V2:

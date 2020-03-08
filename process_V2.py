@@ -109,16 +109,17 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
     
     
     event.do_arrival_time_diff(detectors)
-    try:
+    #try:
+    for t in np.arange(1):
         event.do_arrival_direction(detectors,ev)
         event.do_COM_core(detectors,ev)
         event.find_density(detectors,ev)#
         print('flag?? ',event.direction_flag)
-
+    '''
     except:
         event.flag=1
         print('\n\nissue with event\n\n')
-
+    '''
     
     
     

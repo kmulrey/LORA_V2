@@ -125,7 +125,7 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
     
     if ev.event_flag==0 and ev.direction_flag==0:
         print('saving to file')
-    
+        
     
         outputfile=open(outputdir+file_name+'_event_'+str(int(eventID))+'.txt','w')
         
@@ -139,5 +139,6 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
         outputfile.write('core_y:  {0}\n'.format(ev.y_core))
         outputfile.write('core_z:  {0}\n'.format(ev.z_core))
         for i in np.arange(40):
+            print(i+1, detectors[i].density)
             outputfile.write('{0}     {1}     {2}    {3}     {4}\n'.format(i+1,detectors[i].gps,detectors[i].nsec,int(detectors[i].event_time_stamp),detectors[i].density))
         outputfile.close()

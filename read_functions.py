@@ -677,7 +677,7 @@ def return_second_data_V2(event_id,event_GPS, event_ns,osm_data_hisparc,osm_data
         for i in np.arange(LORA.nLasaB):
             lasa=i+1
             #master
-            #print 'getting OSM for {0}'.format(i+1)
+            print('getting OSM for {0}'.format(i+1))
             if lasa<=5:
                 gpsM= GPS_Time_Stamp_H[(GPS_Time_Stamp_H==(event_GPS+t))*(Station_H==i+1)*(Master_Or_Slave_H==0)]
                 if len(gpsM>0):

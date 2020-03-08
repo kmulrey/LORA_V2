@@ -31,7 +31,9 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
   
   
   
-  
+    index=np.where(header_data['Event_Id']==eventID)
+    
+    
     detectors=[]
     lasas=[]
     LOFAR_id=str(int(time_event-LORAparameters.event_id_offset))

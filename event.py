@@ -318,8 +318,7 @@ def cal_event_timestamp(detectors,lasa):
                     detectors[4*int(lasa_ind)+i].final_event_time=detectors[4*int(lasa_ind)+i].cal_time
                     print(detectors[4*int(lasa_ind)+i].number,  detectors[4*int(lasa_ind)+i].final_event_time)
 
-      
-         else:
+        else:
             try:
                 trigg_time=thresh_use[args[0]]
             except: #this is in here becasue in a few cases the length of thresh_use was less than trigg. condition

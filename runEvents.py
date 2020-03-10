@@ -50,7 +50,7 @@ print(nEvents)
 for i in np.arange(nEvents):
     #print(np.unique(event_data['Station'][event_data['Event_Id']==event_list[i]]))
     stns=np.unique(event_data['Station'][event_data['Event_Id']==event_list[i]])
-    if stns[0]>5 or len(stns)>1:
+    if(stns[0]>5 or len(stns)>1) and stns[0]!=0:
         process_list.append(event_list[i])
         print('processing: ',event_list[i],stns)
         

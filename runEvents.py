@@ -52,7 +52,7 @@ for i in np.arange(nEvents):
     stns=np.unique(event_data['Station'][event_data['Event_Id']==event_list[i]])
     if stns[0]>5 or len(stns)>1:
         process_list.append(event_list[i])
-        #print('processing: ',event_list[i],stns)
+        print('processing: ',event_list[i],stns)
         
 print(len(process_list))
 

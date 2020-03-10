@@ -133,7 +133,7 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
         outputfile.write('event:  {0}\n'.format(str(eventID)))
         outputfile.write('gps_timestamp:  {0}\n'.format(int(time_event[0])))
         outputfile.write('ns:  {0}\n'.format(int(ns_event[0])))
-        outputfile.write('stations: {0}'.format(stations))
+        outputfile.write('stations: {0}\n'.format(stations))
         outputfile.write('index:  {0}\n'.format(index[0][0]))
         outputfile.write('theta:  {0}\n'.format(ev.theta))
         outputfile.write('phi:  {0}\n'.format(ev.phi))

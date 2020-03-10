@@ -91,9 +91,9 @@ def find_counts(detector):
             detector.corrected_threshold=detector.threshold-detector.sec_mean
         
         if detector.corrected_threshold<0:
-            print('~*~***~*~*~*~**~')
-            print('what the heck is going on with this?????')
-            print(detector.threshold,detector.sec_mean,background_mean)
+            #print('~*~***~*~*~*~**~')
+            #print('what the heck is going on with this?????')
+            #print(detector.threshold,detector.sec_mean,background_mean)
         
         if background_rms<10.0:
             corrected=detector.counts-background_mean

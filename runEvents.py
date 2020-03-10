@@ -55,10 +55,11 @@ for i in np.arange(nEvents):
         print('processing: ',event_list[i],stns)
         
 print(len(process_list))
-
+'''
 for i in np.arange(len(process_list)):
     eventID=event_list[i]
     #try:
     process_V2.runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_aera,event_data,file_name)
     #except:
     #print('{0} failed'.format(eventID))
+'''

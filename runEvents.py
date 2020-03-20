@@ -30,7 +30,7 @@ parser.add_option('-i', '--index',type='int',help='filename',default=0)
 
 (options, args) = parser.parse_args()
 #file_name=str(options.file)
-ind=str(options.index)
+ind=int(options.index)
 
 event_file=open('event_list.txt','r')
 events=np.genfromtxt(event_file)

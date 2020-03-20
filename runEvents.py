@@ -24,8 +24,6 @@ path='/vol/astro3/lofar/vhecr/lora_triggered/LORAraw/'
 path2='new_files/'
 
 
-
-
 parser = OptionParser()
 #parser.add_option('-f', '--file',type='str',help='filename',default=0)
 parser.add_option('-i', '--index',type='int',help='filename',default=0)

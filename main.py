@@ -24,13 +24,16 @@ path2='new_files/'
 
 
 parser = OptionParser()
-parser.add_option('-f', '--file',type='str',help='filename',default=0)
+#parser.add_option('-f', '--file',type='str',help='filename',default=0)
+parser.add_option('-i', '--index',type='int',help='filename',default=0)
 
 (options, args) = parser.parse_args()
-file_name=str(options.file)
+#file_name=str(options.file)
+ind=str(options.index)
 
-
-
+event_file=open('event_list.txt','r')
+events=np.genfromtxt(event_file)
+file_name=events[ind]
 
 
 #file_name='20200122_005'

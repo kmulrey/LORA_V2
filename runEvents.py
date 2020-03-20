@@ -24,7 +24,23 @@ path='/vol/astro3/lofar/vhecr/lora_triggered/LORAraw/'
 path2='new_files/'
 
 
-file_name='20200302_0051'
+
+
+parser = OptionParser()
+#parser.add_option('-f', '--file',type='str',help='filename',default=0)
+parser.add_option('-i', '--index',type='int',help='filename',default=0)
+
+(options, args) = parser.parse_args()
+#file_name=str(options.file)
+ind=str(options.index)
+
+event_file=open('event_list.txt','r')
+events=np.genfromtxt(event_file)
+file_name=events[ind]
+
+
+
+#file_name='20200302_0051'
 file=path2+file_name+'.npz'
 print(file)
 

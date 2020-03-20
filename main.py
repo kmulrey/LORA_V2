@@ -35,6 +35,7 @@ event_file=open('event_list.txt','r')
 events=np.genfromtxt(event_file)
 file_name=events[ind]
 
+print file_name
 
 #file_name='20200122_005'
 #file_name='20200101_1847'

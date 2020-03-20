@@ -31,9 +31,16 @@ parser.add_option('-i', '--index',type='int',help='filename',default=0)
 #file_name=str(options.file)
 ind=int(options.index)
 
-event_file=open('event_list.txt','r')
-events=np.genfromtxt(event_file)
-file_name=events[ind]
+#event_file=open('event_list.txt','r')
+#events=np.genfromtxt(event_file)
+#file_name=events[ind]
+
+fp = open('event_list.txt','r')
+for i, line in enumerate(fp):
+    if i == ind:
+        file_name=line.strip()
+        break
+fp.close()
 
 print file_name
 

@@ -14,6 +14,7 @@
 		4118350A24128C9700CC065B /* detector.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = detector.py; sourceTree = "<group>"; };
 		4118350B24128CD100CC065B /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		4118350C24156EB700CC065B /* runEvents.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = runEvents.py; sourceTree = "<group>"; };
+		4118350E2424F80500CC065B /* read_file.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = read_file.py; sourceTree = "<group>"; };
 		418687F223E3087F00D6E820 /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
 		418687F323E308E900D6E820 /* read_root_files.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = read_root_files.py; sourceTree = "<group>"; };
 		418687F423E773F700D6E820 /* plot_coords.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = plot_coords.py; sourceTree = "<group>"; };
@@ -33,6 +34,7 @@
 				4118350C24156EB700CC065B /* runEvents.py */,
 				41F742B923FEC615004CE5D7 /* run_read_event.sh */,
 				41F742B023F29F05004CE5D7 /* event_list.txt */,
+				4118350E2424F80500CC065B /* read_file.py */,
 				41F742B123F2A7AF004CE5D7 /* run_lora.py */,
 				4118350A24128C9700CC065B /* detector.py */,
 				4118350924128C9000CC065B /* read_functions.py */,

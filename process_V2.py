@@ -144,5 +144,5 @@ def runEvent(eventID,log_data,config_data,header_data,osm_data_hisparc,osm_data_
             print(i+1, detectors[i].density,detectors[i].event_time_stamp)
             if math.isnan(detectors[i].event_time_stamp):
                 detectors[i].event_time_stamp=0
-            outputfile.write('{0}     {1}     {2}    {3}     {4}\n'.format(i+1,detectors[i].gps,detectors[i].nsec,int(detectors[i].event_time_stamp),detectors[i].density))
+            outputfile.write('{0}     {1}     {2}    {3}     {4}\n'.format(i+1,detectors[i].gps,detectors[i].nsec,int(detectors[i].final_event_time),detectors[i].density))
         outputfile.close()

@@ -212,15 +212,14 @@ def get_arrival_time(detector):
         
         flag=0
         print('number {0},counts {1}'.format(detector.number,detector.trace_int_counts))
-
+        print(np.max(np.abs(detector.counts)),cut)
         for i in np.arange(LORA.nTrace):
             #print(detector.threshold_time_no_trig)
-            if -1*detector.counts[i]>(45) and flag==0:
-                if i>50:
-                    detector.threshold_time_no_trig=i*5.0*10
-                    #print('no trigger crossing ',i,cut,-1* detector.counts[i])
+            #if -1*detector.counts[i]>(45) and flag==0:
+            #    if i>50:
+            #        detector.threshold_time_no_trig=i*5.0*10
+            #print('no trigger crossing ',i,cut,-1* detector.counts[i])
 
-            print(-1*detector.counts[i],cut)
 
             if -1*detector.counts[i]>cut and flag==0:
                 if i<50:

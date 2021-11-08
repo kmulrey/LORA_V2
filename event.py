@@ -331,7 +331,7 @@ def cal_event_timestamp(detectors,lasa):
                     detectors[4*int(lasa_ind)+i].cal_time=detectors[4*int(lasa_ind)+i].threshold_time-trigg_time+detectors[lasa_ind*4].event_time_stamp+det.cable_delay[4*int(lasa_ind)+i]
                     detectors[4*int(lasa_ind)+i].final_event_time=detectors[4*int(lasa_ind)+i].cal_time
                     print('cal time: ',int(detectors[4*int(lasa_ind)+i].cal_time))
-                    print('event time: ',detectors[4*int(lasa_ind)+i].final_event_time))
+                    print('event time: ',int(detectors[4*int(lasa_ind)+i].final_event_time))
                     
 
 '''

@@ -89,6 +89,7 @@ class Lasa:
 
 def load_event_information(info,detectors):
     print('load trigger patterns 1')
+    print(len(detectors))
     for i in np.arange(len(detectors)):
         print(i)
         detectors[i].number=i+1

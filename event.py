@@ -222,7 +222,8 @@ def get_arrival_time(detector):
 
             
             if -1*detector.counts[i]>cut and flag==0:
-                if i<50:
+                
+                if i<30:
                 
                     continue
                 else:

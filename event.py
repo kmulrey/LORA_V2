@@ -505,7 +505,7 @@ def find_density(detectors,event):
     for i in np.arange(40):
         detectors[i].density=detectors[i].trace_int_counts/detectors[i].gain/(LORA.Det_Area*np.cos(event.theta*np.pi/180.0))
         detectors[i].err_density=np.power(detectors[i].density,0.5) ;    #Assuming possionian error
-        if detectors[i].density<=LORA.Density_Cut:
+        if detectors[i].density<=LORA.Density_Cut or detector.threshold_time==0:
             detectors[i].density=0
             detectors[i].err_density=0
 

@@ -332,6 +332,7 @@ def cal_event_timestamp(detectors,lasa):
                     detectors[4*int(lasa_ind)+i].final_event_time=detectors[4*int(lasa_ind)+i].cal_time
                     print('cal time: ',int(detectors[4*int(lasa_ind)+i].cal_time))
                     print('event time: ',detectors[4*int(lasa_ind)+i].final_event_time))
+                    
 
 '''
 def cal_event_timestamp(detectors,lasa):

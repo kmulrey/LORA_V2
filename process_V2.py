@@ -17,7 +17,7 @@ import imp
 import math
 
 #outputdir='/Users/kmulrey/LOFAR/LORA/LORAprocessing/LORA_V2/LORAoutput/'
-outputdir='/vol/astro3/lofar/lora/testOutputV2/'
+outputdir='/vol/astro7/lofar/lora/testOutputV2/'
 path='/vol/astro3/lofar/vhecr/lora_triggered/LORAraw/'
 path2='new_files/'
   

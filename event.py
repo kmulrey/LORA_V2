@@ -661,6 +661,7 @@ def TF2_Fit_NKG(h2,N0,r0,s0,x0,y0,x_min,x_max,y_min,y_max):
     sig_j=0
     cov_ij=0
     
+    ''' #temporarily out
     for i in np.arange(4):
 
         sig_i=np.sqrt(fitter.GetCovarianceMatrixElement(i,i))
@@ -670,9 +671,11 @@ def TF2_Fit_NKG(h2,N0,r0,s0,x0,y0,x_min,x_max,y_min,y_max):
             corMatrix[i][j]=cov_ij/(sig_i*sig_j)
             if(sig_i==0 or sig_j==0):
                 corMatrix[i][j]=0
-       
+    '''
 
-    corCoef_xy=corMatrix[1][2] #Correlation coeff. between the x & y core position
+    #corCoef_xy=corMatrix[1][2] #Correlation coeff. between the x & y core position
+    corCoef_xy=0 #temporary fix
+
     return Ne_fit,rM_fit,s_fit,x_core_fit,y_core_fit,x_core_fit_err,y_core_fit_err, corCoef_xy
 
 
